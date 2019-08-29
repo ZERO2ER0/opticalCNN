@@ -266,7 +266,7 @@ def area_downsampling_tf(input_image, target_side_length):
                                     strides=[1,factor,factor,1],
                                     padding="VALID")
     else:
-        # We upsample the image and then average pool
+        # We downsample the image and then average pool
         lcm_factor = least_common_multiple(target_side_length, input_shape[1]) / target_side_length
 
         if lcm_factor>10:
